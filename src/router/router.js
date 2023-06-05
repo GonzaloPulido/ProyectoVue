@@ -9,6 +9,7 @@ import Login from '../pages/Login.vue'
 import Register from '../pages/Register.vue'
 import Piloto from '../pages/Piloto.vue'
 import Pilotos from '../pages/Pilotos.vue'
+import Perfil from '../pages/Perfil.vue'
 
 const routes = [
     {
@@ -17,7 +18,7 @@ const routes = [
         component: Inicio,
     },
     {
-        path: '/circuito',
+        path: '/circuito/:id',
         name: 'Circuito',
         component: Circuito
     },
@@ -60,6 +61,11 @@ const routes = [
         path: '/pilotos',
         name: 'Pilotos',
         component: Pilotos
+    },
+    {
+        path: '/perfil',
+        name: 'Perfil',
+        component: Perfil
     },
     {
         path: '/:catchAll(.*)',

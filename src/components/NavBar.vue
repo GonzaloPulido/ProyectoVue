@@ -1,8 +1,8 @@
 <script>
-/* import { inject } from 'vue';
-import Store from '../store/Store'; */
+import { mapState, mapActions } from 'vuex';
 import "@fortawesome/fontawesome-free/css/all.css"
 export default {
+  
   data() {
     return {
       isNavbarOpen: false
@@ -11,21 +11,17 @@ export default {
   methods: {
     toggleNavbar() {
       this.isNavbarOpen = !this.isNavbarOpen;
+    },
+    ...mapActions(['logout']),
+    logOut(){
+      this.logout();
     }
+
   },
-  /* setup() {
-    const store = inject(Store);
-
-    const isLoggedIn = store.state.loggedIn;
-    const setLoggedIn = store.commit('setLoggedIn');
-
-    // Utiliza las variables y métodos según tus necesidades
-
-    return {
-      isLoggedIn,
-      setLoggedIn
-    };
-  } */
+  computed: {
+    ...mapState(['isLoggedIn'])
+  }
+  
   
 }
 </script>
@@ -53,11 +49,14 @@ export default {
       <router-link v-if="!isLoggedIn" to="/register">
         <i class="fa-solid fa-registered fa-lg"></i>
       </router-link>
-      <router-link v-if="!isLoggedIn" to="/login">
+      <router-link v-if="!isLoggedIn"  to="/login">
         <i class="fa-solid fa-right-to-bracket fa-lg"></i>
       </router-link>
-      <router-link v-else to="/logout">
-        <i class="fa-solid fa-sign-out fa-lg"></i>
+      <router-link v-if="isLoggedIn" to="/perfil">
+        <i class="fa-solid fa-user fa-lg"></i>
+      </router-link>
+      <router-link v-if="isLoggedIn" @click="logOut" to="/">
+        <i class="fa-solid fa-person-walking-arrow-right fa-lg"></i>
       </router-link>
     </div>
   </header>
@@ -119,6 +118,8 @@ a:link, a:visited, a:active {
 
 .navbar__links {
   display: flex;
+  width: 50%;
+  justify-content: space-between;
 }
 
 .navbar__links--active {
@@ -152,6 +153,7 @@ a:link, a:visited, a:active {
   color: #D9043D;
   font-size: 24px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
@@ -166,6 +168,7 @@ a:link, a:visited, a:active {
     background-color: #3A3A3A;
     padding: 10px;
     margin-top: 10px;
+    width: 25%;
   }
 
   .navbar__links--active {
