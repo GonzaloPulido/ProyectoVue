@@ -1,32 +1,75 @@
 <script>
 import TwitterFeed from '../components/TwitterFeed.vue'
+import Clasificacion from '../components/Clasificacion.vue';
 export default {
   components: {
     TwitterFeed,
+    Clasificacion
   }
 };
 </script>
 
 <template>
-    <div class="homepage">
-        <TwitterFeed/>
-    </div>
-  </template>
-  
-  <style>
-  .homepage {
-    background-color: #707070;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 200vh;
-  }
-  
-  
-  .twitter-feed-container {
-    width: 50%;
-    }
+  <div class="iniciocontainer">
+    <div class="news">
+      <h1>MotoGP Temporada 2023</h1>
+      <img src="../assets/grid2023.webp" class="grid2023"/>
+      <p class="parrafoinicio">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium orci sem, 
+        vitae posuere nibh pellentesque a. Integer ultricies mollis neque, a commodo mauris 
+        consequat lobortis. Nam nec malesuada ante. Aliquam erat volutpat. Quisque fringilla felis 
+        mauris, id consectetur felis pulvinar vel. Sed arcu odio, dictum eu molestie et, pharetra et ante. 
+        Nunc vel diam sapien.
 
-  </style>
+        Mauris ex eros, tempus at euismod et, pellentesque nec lacus. Nam tincidunt vestibulum enim, ac 
+        efficitur dui interdum non. Quisque sed congue nulla. Nullam in eros in felis tincidunt imperdiet. 
+        Suspendisse potenti. Praesent in nibh diam. Nullam sagittis vel dui ut gravida. Phasellus mi urna, 
+        convallis vitae leo ac, ornare porttitor tortor. Suspendisse sed ante vitae quam rutrum posuere. Donec 
+        pellentesque pretium lacus. Aenean elementum sollicitudin finibus. Etiam ut pharetra erat.
+
+        Vivamus auctor turpis sit amet dapibus ornare. Integer id aliquet erat, id tincidunt tortor. Donec ultrices 
+        commodo hendrerit. Curabitur enim nisl, tristique commodo tellus sit amet, gravida sollicitudin felis. Aenean 
+        finibus elementum nibh, et euismod neque posuere vitae. Pellentesque habitant morbi tristique senectus et netus 
+        et malesuada fames ac turpis egestas. Integer nec tempor augue, eu placerat purus.
+      </p>
+    </div>
+    <div class="rightcontainer">
+      <div class="liveChampionship">
+        <Clasificacion/>
+      </div>
+      <div class="twitterFeed">
+        <TwitterFeed/>
+      </div>
+    </div>
+  </div>
+</template>
+
+<style>
+.iniciocontainer{
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  background-color: #a4a4a4;
+  min-height: 215vh;
+}
+
+
+.news{
+  width: 60%;
+  text-align: center;
+}
+
+.rightcontainer{
+  width: 25%;
+  height: 20px;
   
+}
+.grid2023{
+  width: 100%;
+  margin-top: 20px;
+}
+.parrafoinicio{
+  margin-top: 30px;
+  font-size: 20px;
+}
+</style>

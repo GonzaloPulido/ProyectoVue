@@ -63,6 +63,7 @@ a:link, a:visited, a:active {
   width: 40%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  filter: brightness(300%);
   
 }
 

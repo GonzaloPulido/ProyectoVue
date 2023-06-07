@@ -15,7 +15,7 @@
     <a
         class="twitter-timeline"
         href="https://twitter.com/MotoGP"
-        data-tweet-limit="6">
+        data-tweet-limit="2">
         Tweets by MotoGP
     </a>
     </div>
