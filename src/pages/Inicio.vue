@@ -10,11 +10,11 @@ export default {
 </script>
 
 <template>
-  <div class="iniciocontainer">
+  <div class="indexcontainer">
     <div class="news">
       <h1>MotoGP Temporada 2023</h1>
       <img src="../assets/grid2023.webp" class="grid2023"/>
-      <p class="parrafoinicio">
+      <p class="indexparagraph">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium orci sem, 
         vitae posuere nibh pellentesque a. Integer ultricies mollis neque, a commodo mauris 
         consequat lobortis. Nam nec malesuada ante. Aliquam erat volutpat. Quisque fringilla felis 
@@ -45,7 +45,7 @@ export default {
 </template>
 
 <style>
-.iniciocontainer{
+.indexcontainer{
   padding: 2rem;
   display: flex;
   justify-content: space-around;
@@ -68,7 +68,7 @@ export default {
   width: 100%;
   margin-top: 20px;
 }
-.parrafoinicio{
+.indexparagraph{
   margin-top: 30px;
   font-size: 20px;
 }

@@ -10,6 +10,7 @@ import Register from '../pages/Register.vue'
 import Piloto from '../pages/Piloto.vue'
 import Pilotos from '../pages/Pilotos.vue'
 import Perfil from '../pages/Perfil.vue'
+import Favoritos from '../pages/Favoritos.vue'
 
 const routes = [
     {
@@ -53,7 +54,7 @@ const routes = [
         component: Register
     },
     {
-        path: '/piloto',
+        path: '/piloto/:id',
         name: 'Piloto',
         component: Piloto
     },
@@ -66,6 +67,11 @@ const routes = [
         path: '/perfil',
         name: 'Perfil',
         component: Perfil
+    },
+    {
+        path: '/favoritos',
+        name: 'Favoritos',
+        component: Favoritos
     },
     {
         path: '/:catchAll(.*)',

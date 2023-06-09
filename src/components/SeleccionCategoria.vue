@@ -1,19 +1,28 @@
 <script>
-import {fetchDataFromApi} from '../helpers/apiHelper.js'
-
-export default {
+  export default {
     data() {
-        return {  
-            motoGP: 'https://apimotogp2023-production.up.railway.app/api/ridersMotoGP',
-            moto2: 'https://apimotogp2023-production.up.railway.app/api/ridersMoto2',
-            moto3: 'https://apimotogp2023-production.gup.railway.app/api/ridersMoto3',
-        }
+      return {
+        selectedCategory: 'MotoGP',
+      };
     },
-}
+    methods: {
+      updateriders() {
+        this.$emit('changed-category', this.selectedCategory);
+        
+      },
+    },
+  };
 </script>
 
 <template>
-    <select>
-        
-    </select>
+    <div>
+      <select v-model="selectedCategory" @change="updateriders">
+        <option value="MotoGP">MotoGP</option>
+        <option value="Moto2">Moto2</option>
+        <option value="Moto3">Moto3</option>
+      </select>
+    </div>
 </template>
+  
+  
+  

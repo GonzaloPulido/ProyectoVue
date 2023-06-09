@@ -32,16 +32,16 @@ export default {
 
 <template>
   <div class="containerchampionship">
-    <h1 class="titulochampionship">Clasificacion en vivo</h1>
-    <div v-if="riders" v-for="rider in riders" class="cardpiloto">
-        <p class="nombrepiloto">{{ rider.name }}</p>
-        <p class="puntospiloto">{{ rider.points }}</p>
+    <h1 class="titlechampionship">Clasificacion en vivo</h1>
+    <div v-if="riders" v-for="rider in riders" class="cardrider">
+        <p class="ridername">{{ rider.name }}</p>
+        <p class="riderpoints">{{ rider.points }}</p>
     </div>
   </div>
 </template>
 
 <style>
-.cardpiloto{
+.cardrider{
   display: flex;
   justify-content: space-between;
   width: 100%;

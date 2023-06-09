@@ -41,6 +41,10 @@ export default {
       <router-link to="/equipos">
         <h2 class="navbar__link">Equipos</h2>
       </router-link>
+      <router-link v-if="isLoggedIn" to="/favoritos">
+        <h2 class="navbar__link">Favoritos</h2>
+      </router-link>
+
     </div>
     <div class="navbar__buttons">
       <div class="navbar__toggle" @click="toggleNavbar">

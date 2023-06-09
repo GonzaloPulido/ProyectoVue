@@ -23,6 +23,6 @@ export default {
     justify-content: center;
     min-height: 100vh;
     padding: 7vh;
-    gap: 3rem;
+    gap: 0.1rem;
   }
 </style>

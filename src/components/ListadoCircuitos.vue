@@ -5,8 +5,9 @@ export default {
     data() {
         return {  
             circuits: [],
-            url: 'https://apimotogp2023-production.up.railway.app/api/circuitsMotoGP'
-        }
+            url: 'https://apimotogp2023-production.up.railway.app/api/circuitsMotoGP',
+            showInfo: false,
+          }
     },
     mounted() {
       this.getDataFromApi();
@@ -19,52 +20,62 @@ export default {
         } catch (error) {
           console.error('Error al obtener los datos de la API:', error);
         }
-      }
+      },
+      toggleInfo(index) {
+        this.showInfo = this.showInfo === index ? null : index;
+      },
     }  
 }
 </script>
 
 <template>
-  <div
-  v-for="(item, index) in circuits"
-  class="cardcircuito"
-  >
+  <div v-for="(item, index) in circuits" :key="item._id" class="cardcircuit">
+    <div class="card-content">
       <img :src="item.backImage" alt="Imagen del circuito" class="backImage" />
       <div class="infocircuit">
-          <p>{{ item.country }}</p>
-          <p>{{ item.circuit }}</p>
-          <p>{{ item.start }} - {{ item.finish }}</p>
-          <router-link :to="`/circuito/${item._id}`" class="buttoninfo">
-            Informacion
-          </router-link>
+        <p>{{ item.country }}</p>
+        <p>{{ item.circuit }}</p>
+        <p>{{ item.start }} - {{ item.finish }}</p>
+        <div class="toggle-button" @click="toggleInfo(index)">
+          <i :class="['fa-solid', showInfo === index ? 'fa-angle-up' : 'fa-angle-down']"></i>
+        </div>
       </div>
-      
+    </div>
+    <transition name="slide">
+      <div v-if="showInfo === index" class="additional-info">
+        <img :src="item.image" alt="Imagen del trazado" class="trackImage" />
+        <div class="textInfo">
+          <p>Longitud: {{ item.length }} kilometros</p>
+          <p>Curvas a Izquierdas: {{ item.leftCorners }} curvas</p>
+          <p>Curvas a Derechas: {{ item.rightCorners }} curvas</p>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <style scoped>
-
-a:link, a:visited, a:active {
-  text-decoration: none;
-}
-
-.cardcircuito {
+.cardcircuit {
   background-color: #2b2e31;
   border-radius: 10px;
-  border-color: #D9043D;
+  border-color: #d9043d;
   color: white;
   font-size: 20px;
-  display: flex;
-  flex-direction: row;
   width: 80%;
+  overflow: hidden;
+  margin-bottom: 10px;
 }
 
-.backImage{
+.card-content {
+  display: flex;
+}
+
+.backImage {
   width: 40%;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   filter: brightness(300%);
-  
+  transition: width 0.3s ease;
 }
 
 .infocircuit {
@@ -74,38 +85,50 @@ a:link, a:visited, a:active {
   padding: 20px;
 }
 
-.buttoninfo{
-  color: #D9043D;
+.toggle-button {
+  color: #d9043d;
+  cursor: pointer;
+}
+
+.additional-info {
+  background-color: #2b2e31;
+  padding: 20px;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+.textInfo{
+  width: 100%;
+  font-size: 20px;
+  margin-top: 68px;
+}
+
+.show {
+  display: block;
+}
+
+
+.trackImage {
+  width: 40%;
+  border-radius: 5px;
 }
 
 @media (max-width: 1400px) {
-  .cardcircuito {
+  .card-content{
     flex-direction: column;
-    font-size: 20px;
   }
-
-  .backImage {
+  .backImage{
     width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0px;
   }
-
+  .additional-info{
+    flex-direction: column;
+  }
+  .trackImage{
+    margin: auto;
+    width: 50%;
+  }
 }
 
-@media (max-width: 800px) {
-  .cardcircuito {
-    font-size: 15px;
-  }
-
-  .backImage {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-left-radius: 0px;
-  }
-
-
-  
-}
 </style>
