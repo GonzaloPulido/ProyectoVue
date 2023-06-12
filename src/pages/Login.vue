@@ -32,15 +32,14 @@ export default {
       } catch (error) {
         console.error('Error al obtener los datos de la API:', error);
       }
-  },
+    },
   async logedUser(){
     try {
         const checkCredentials = this.users.some(
             (user) => (user.email === this.formData.email) && (user.password === this.formData.password)
         );
-
-
-        if(checkCredentials) {
+        
+        if(checkCredentials && this.checkEmail(this.formData.email) && this.checkPassword(this.formData.password)) {
             this.$store.state.isLoggedIn = true;
             this.goodWarning = true
             const finalUser = this.users.find(

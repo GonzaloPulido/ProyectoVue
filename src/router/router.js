@@ -39,11 +39,6 @@ const routes = [
         component: Equipos
     },
     {
-        path: '/error',
-        name: 'Error',
-        component: Error
-    },
-    {
         path: '/login',
         name: 'Login',
         component: Login

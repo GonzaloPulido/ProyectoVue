@@ -29,7 +29,6 @@ export default {
         return regex.test(firstname)
     },
     checkSurname(surname){
-        console.log("wewefw");
         const regex = /^(?!^\s)[a-zA-Z]+(?:\s[a-zA-Z]+){0,2}$/
         return regex.test(surname)
     },
@@ -70,7 +69,9 @@ export default {
                 setTimeout(() => {
                     this.badWarning = false;
                 },2000)
-            }else{
+            }else if(this.checkUsername(this.formData.userName)&& this.checkFirstname(this.formData.firstname) && 
+                    this.checkSurname(this.formData.surname) && this.checkAge(this.formData.age) && this.checkEmail(this.formData.email) 
+                    && this.checkPassword(this.formData.password)) {
                 const data = await fetch(this.url,{
                     method: 'POST',
                     headers: {
@@ -78,7 +79,7 @@ export default {
                     },
                     body: JSON.stringify(this.formData),
                 });
-                 if (data.ok){
+                if (data.ok){
                     this.goodWarning = true
                 setTimeout(() => {
                     this.goodWarning = false;
