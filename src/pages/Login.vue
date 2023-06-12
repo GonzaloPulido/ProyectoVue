@@ -15,6 +15,15 @@ export default {
     };
   },
   methods: {
+    checkEmail(email) {
+        const regex = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
+        return regex.test(email)
+    },
+    checkPassword(password){
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*\W).{5,10}$/
+
+        return regex.test(password)
+    },
     async getDataFromApi() {
       try {
         const data = await fetchDataFromApi(this.url);
@@ -26,25 +35,21 @@ export default {
   },
   async logedUser(){
     try {
-        const checkEmail = this.users.some(
-            (user) => user.email === this.formData.email
-
+        const checkCredentials = this.users.some(
+            (user) => (user.email === this.formData.email) && (user.password === this.formData.password)
         );
 
-        const checkPassword = this.users.some(
-            (user) => user.password === this.formData.password
-        );
 
-        if(checkEmail && checkPassword) {
+        if(checkCredentials) {
             this.$store.state.isLoggedIn = true;
             this.goodWarning = true
             const finalUser = this.users.find(
               (user) => user.email === this.formData.email
             )
+            /* this.$userId.state.userId = finalUser._id; */
             localStorage.setItem("logedUser",finalUser._id);
             setTimeout(() => {
                 this.goodWarning = false;
-                
                 this.$router.push(`/perfil`)
             },2000)
         }else{
@@ -83,12 +88,14 @@ export default {
       <h2>Iniciar sesión</h2>
       <form @submit.prevent="logedUser" class="login-form">
         <div class="form-group">
-          <label for="email">Nombre de usuario:</label>
+          <label for="email">Email:</label>
           <input type="text" id="email" v-model="formData.email" required>
+          <span v-if="!checkEmail(formData.email)" class="errorMessage">Credenciales incorrectas</span>
         </div>
         <div class="form-group">
           <label for="password">Contraseña:</label>
           <input type="password" id="password" v-model="formData.password" required>
+          <span v-if="!checkPassword(formData.password)" class="errorMessage">Credenciales incorrectas</span>
         </div>
         <button type="submit" class="btn btn-primary">Iniciar sesión</button>
       </form>

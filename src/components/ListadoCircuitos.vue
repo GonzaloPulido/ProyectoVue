@@ -1,7 +1,11 @@
 <script>
 import {fetchDataFromApi} from '../helpers/apiHelper.js'
+import Favoritos from './Favoritos.vue';
 
 export default {
+    components:  {
+      Favoritos
+    }, 
     data() {
         return {  
             circuits: [],
@@ -39,6 +43,7 @@ export default {
         <div class="toggle-button" @click="toggleInfo(index)">
           <i :class="['fa-solid', showInfo === index ? 'fa-angle-up' : 'fa-angle-down']"></i>
         </div>
+        <div class="componentFav"><Favoritos :circuitId="item._id"/></div>
       </div>
     </div>
     <transition name="slide">

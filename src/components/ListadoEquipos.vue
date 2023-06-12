@@ -60,8 +60,14 @@
         <img :src="item.image" alt="Imagen del piloto" class="teamimage" />
         <div class="infoteam">
             <p>{{ item.name }}</p>
-            <p>{{ item.piloto1 }}</p>
-            <p>{{ item.piloto2 }}</p>
+            <router-link :to="`/piloto/${item.piloto1Id}`">
+              <p>{{ item.piloto1 }}</p>
+            </router-link>
+
+            
+            <router-link :to="`/piloto/${item.piloto2Id}`"> 
+              <p>{{ item.piloto2 }}</p>
+            </router-link>
         </div>
         
     </div>
