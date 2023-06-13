@@ -4,25 +4,32 @@ import {fetchDataFromApi} from '../helpers/apiHelper.js'
 export default {
     data() {
         return {
-            userId: localStorage.getItem('logedUser'),
+            userId: this.$store.state.userId,
             logedUser: {},
             
         }
     },
     methods: {
       async getDataFromApi() {
-        console.log(this.userId)
         try {
           const data = await fetchDataFromApi(`https://apimotogp2023-production.up.railway.app/api/users/${this.userId}`);
           this.logedUser = data
-          console.log(this.logedUser)
         } catch (error) {
           console.error('Error al obtener los datos de la API:', error);
         }
+      },
+      verifyAuth(){
+          if(!this.$store.state.isLoggedIn){
+            this.$router.push(`/`)
+          }
       }
     },
     created(){
         this.getDataFromApi();
+        this.verifyAuth();
+
+        
+        
     } 
 }
 </script>

@@ -2,7 +2,8 @@ import { createStore } from 'vuex';
 
 const store = createStore({
   state: {
-    isLoggedIn: false
+    isLoggedIn: false,
+    userId: "",
   },
   mutations: {
     setLoggedIn(state, value) {

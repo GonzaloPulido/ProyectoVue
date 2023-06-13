@@ -31,8 +31,8 @@ export default {
 </script>
 
 <template>
+  <h1 class="titlechampionship">Clasificacion en vivo</h1>
   <div class="containerchampionship">
-    <h1 class="titlechampionship">Clasificacion en vivo</h1>
     <div v-if="riders" v-for="rider in riders" class="cardrider">
         <p class="ridername">{{ rider.name }}</p>
         <p class="riderpoints">{{ rider.points }}</p>
@@ -45,7 +45,6 @@ export default {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color:#D9043D;
   color: white;
   font-size: 20px;
   padding: 8px;
@@ -53,6 +52,12 @@ export default {
 
 .containerchampionship{
   margin-top: 22px;
+  text-align: center;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,0.5690651260504201) 0%, rgba(217,4,61,1) 76%);
+}
+
+.titlechampionship{
   text-align: center;
 }
 
