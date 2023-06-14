@@ -52,26 +52,75 @@
 </script>
 
 <template>
+  <div class="rider-list">
     <div
-    v-for="(item, index) in riders"
-    class="cardrider"
+      v-for="(item, index) in riders"
+      :key="index"
+      class="cardrider"
     >
-        <img :src="item.image" alt="Imagen del piloto" class="riderimage" />
-        <div class="inforider">
-            <p>{{ item.name }}</p>
-            <p>{{ item.country }}</p>
-            <p>{{ item.height }}</p>
-            <router-link :to="`/piloto/${item._id}`" class="buttoninfo">
-            Informacion
-          </router-link>
-        </div>
-        
+      <img :src="item.image" alt="Imagen del piloto" class="riderimage" />
+      <div class="inforider">
+        <p>{{ item.name }}</p>
+        <p>{{ item.country }}</p>
+        <p>{{ item.height }}</p>
+        <router-link :to="`/piloto/${item._id}`" class="buttoninfo">
+          Informacion
+        </router-link>
+      </div>
     </div>
-  </template>
-
+  </div>
+</template>
 
 <style scoped>
-.riderimage{
-    width: 20%;
+
+a:link, a:visited, a:active {
+  text-decoration: none;
 }
+.rider-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cardrider {
+  width: 31.3%; 
+  min-width: 400px;
+  margin: auto;
+  margin-bottom: 30px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%);
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+/* .imagecontainer {
+  width: 90%;
+  height: 0;
+  position: relative;
+} */
+.inforider{
+  width: 50%;
+  margin-top: 40%;
+  text-align: right;
+}
+
+.riderimage {
+  width: 50%;
+  margin-top: auto;
+  /* object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); */
+}
+
+.buttoninfo{
+  background-color: #D9043D;
+  padding: 4px;
+  border-radius: 5px;
+  color: white;
+}
+
 </style>
+

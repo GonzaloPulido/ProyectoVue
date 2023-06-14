@@ -36,8 +36,7 @@
   outline: none;
   cursor: pointer;
   position: relative;
-  left: 20px;
-  top: 20px;
+  left: 5px;
 }
 
 .custom-select option {

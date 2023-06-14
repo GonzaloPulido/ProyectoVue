@@ -18,7 +18,7 @@ export default {
       <SiguienteCarrera/>
     </div>
     <div class="news">
-      <h1>MotoGP Temporada 2023</h1>
+      <h1 class="indextitle">MotoGP Temporada 2023</h1>
       <img src="../assets/grid2023.webp" class="grid2023"/>
       <p class="indexparagraph">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium orci sem, 
@@ -52,6 +52,9 @@ export default {
 </template>
 
 <style>
+.indextitle{
+  font-size: 2.5rem;
+}
 .leftcontainer{
   width: 60%;
   margin-top: 20px;

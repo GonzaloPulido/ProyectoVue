@@ -32,8 +32,7 @@
     text-align: center;
     margin-top: 20px;
     padding: 20px;
-    font-size: 25px;
-    color: white;
+    font-size: 2.5rem;
     }
   
   </style>

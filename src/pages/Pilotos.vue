@@ -16,10 +16,16 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="containerpilotos">
     <SeleccionCategoria @changed-category="selectedCategory = $event" />
     <ListadoPilotos :category="selectedCategory" />
   </div>
 </template>
 
+<style scoped>
+.containerpilotos{
+  padding: 2rem;
+  background-color: #a4a4a4;
+}
+</style>
 
