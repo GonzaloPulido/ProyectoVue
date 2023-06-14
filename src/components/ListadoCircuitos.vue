@@ -135,6 +135,7 @@ export default {
 </template>
 
 <style scoped>
+
 .cardcircuit {
   background-color: #2b2e31;
   border-radius: 10px;
@@ -159,9 +160,12 @@ export default {
 }
 
 .componentFav{
+  width: 13%;
   color: #d9043d;
   font-size: 25px;
   cursor: pointer;
+  position: relative;
+  left: 92%;
 }
 
 .infocircuit {
@@ -172,24 +176,31 @@ export default {
 }
 
 .toggle-button {
+  width: 20%;
+  margin: auto;
   color: #d9043d;
   cursor: pointer;
   font-size: 25px;
+  position: relative;
+  top: 40px;
 }
 
 .additional-info {
   background-color: #2b2e31;
   padding: 20px;
   overflow: hidden;
-  transition: max-height 0.3s ease;
+  transition: 0.3s ease;
   display: flex;
   justify-content: space-between;
   text-align: center;
 }
 .textInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
   width: 100%;
   font-size: 20px;
-  margin-top: 68px;
 }
 
 .show {
