@@ -17,7 +17,7 @@ export default {
           const data = await fetchDataFromApi(this.url);
           this.riders = data
           this.orderAndSliceriders();
-          console.log(this.riders);
+          
         } catch (error) {
           console.error('Error al obtener los datos de la API:', error);
         }
@@ -51,7 +51,6 @@ export default {
 }
 
 .containerchampionship{
-  margin-top: 22px;
   text-align: center;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0.5690651260504201) 0%, rgba(217,4,61,1) 76%);

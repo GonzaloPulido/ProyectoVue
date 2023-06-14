@@ -74,7 +74,6 @@ export default {
         },
       async updateUser(){
         try {
-            console.log(this.users);
             const duplicateEmail = this.users.some(
                 (user) => user.email === this.logedUser.email
             );
@@ -102,7 +101,7 @@ export default {
 
                 },2000)
                 }else{
-                    console.log('Peticion MAL MAL MAL')
+                    console.log('BAD REQUEST')
                 }   
             }
         }catch (error){

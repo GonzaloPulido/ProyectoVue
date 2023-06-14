@@ -87,7 +87,7 @@ export default {
 
                 },2000)
                 }else{
-                    console.log('Peticion MAL MAL MAL')
+                    console.log('BAD REQUEST')
                 }   
             }
         }catch (error){

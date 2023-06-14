@@ -1,16 +1,22 @@
 <script>
 import TwitterFeed from '../components/TwitterFeed.vue'
 import Clasificacion from '../components/Clasificacion.vue';
+import SiguienteCarrera from '../components/SiguienteCarrera.vue';
 export default {
   components: {
     TwitterFeed,
-    Clasificacion
+    Clasificacion,
+    SiguienteCarrera
   }
 };
 </script>
 
 <template>
   <div class="indexcontainer">
+    <div class="leftcontainer">
+    <div class="siguienteCarrera">
+      <SiguienteCarrera/>
+    </div>
     <div class="news">
       <h1>MotoGP Temporada 2023</h1>
       <img src="../assets/grid2023.webp" class="grid2023"/>
@@ -33,6 +39,7 @@ export default {
         et malesuada fames ac turpis egestas. Integer nec tempor augue, eu placerat purus.
       </p>
     </div>
+    </div>
     <div class="rightcontainer">
       <div class="liveChampionship">
         <Clasificacion/>
@@ -45,23 +52,27 @@ export default {
 </template>
 
 <style>
+.leftcontainer{
+  width: 60%;
+  margin-top: 20px;
+}
 .indexcontainer{
   padding: 2rem;
   display: flex;
   justify-content: space-around;
   background-color: #a4a4a4;
-  min-height: 215vh;
+  
 }
 
 
 .news{
-  width: 60%;
+  width: 100%;
   text-align: center;
 }
 
 .rightcontainer{
   width: 25%;
-  height: 20px;
+  margin-top: 20px;
   
 }
 .grid2023{
@@ -71,5 +82,17 @@ export default {
 .indexparagraph{
   margin-top: 30px;
   font-size: 20px;
+}
+
+@media (max-width: 1200px) {
+  .indexcontainer {
+    flex-direction: column;
+  }
+  .leftcontainer{
+    width: 100%;
+  }
+  .rightcontainer{
+    width: 100%;
+  }
 }
 </style>

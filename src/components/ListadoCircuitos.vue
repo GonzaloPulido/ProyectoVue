@@ -49,7 +49,6 @@ export default {
             }return false
           }
         }else{
-          console.log(false);
           return false;
         }
       },
@@ -69,7 +68,6 @@ export default {
                     },
                     body: JSON.stringify(this.userData),
                 });
-              console.log("eleminando de favoritos");
               return true
 
             }else{
@@ -113,7 +111,7 @@ export default {
       <div class="infocircuit">
         <p>{{ item.country }}</p>
         <p>{{ item.circuit }}</p>
-        <p>{{ item.start }} - {{ item.finish }}</p>
+        <p>{{ item.start }}  a  {{ item.finish }}</p>
         <div class="toggle-button" @click="toggleInfo(index)">
           <i :class="['fa-solid', showInfo === index ? 'fa-angle-up' : 'fa-angle-down']"></i>
         </div>

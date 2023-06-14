@@ -48,7 +48,7 @@ export default {
             /* this.$userId.state.userId = finalUser._id; */
             localStorage.setItem("logedUser",finalUser._id);
             this.$store.state.userId = finalUser._id;
-            console.log(this.$store.state.userId);
+            
             setTimeout(() => {
                 this.goodWarning = false;
                 this.$router.push(`/perfil`)

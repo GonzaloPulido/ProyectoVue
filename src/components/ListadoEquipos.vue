@@ -40,7 +40,7 @@
           
           const data = await fetchDataFromApi(url);
           this.teams = data;
-          console.log(this.teams);
+          
         } catch (error) {
           console.error('Error al obtener los datos de la API:', error);
         }
