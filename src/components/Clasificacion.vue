@@ -40,7 +40,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .cardrider{
   display: flex;
   justify-content: space-between;
@@ -51,6 +51,7 @@ export default {
 }
 
 .containerchampionship{
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   text-align: center;
   background: rgb(0,0,0);
   background: linear-gradient(0deg, rgba(0,0,0,0.5690651260504201) 0%, rgba(217,4,61,1) 76%);

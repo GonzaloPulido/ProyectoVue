@@ -51,7 +51,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
 .indextitle{
   font-size: 2.5rem;
 }

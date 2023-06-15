@@ -14,7 +14,7 @@ export default {
     </div>
 </template>
 
-<style>
+<style scoped>
   .circuitspage {
     background-color: #a4a4a4;
     display: flex;

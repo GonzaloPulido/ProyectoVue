@@ -149,16 +149,25 @@ export default {
           <input type="password" id="password" v-model="formData.password" required>
           <span v-if="!checkPassword(formData.password)" class="errorMessage">Credenciales incorrectas</span>
         </div>
-        <button type="submit" class="btn btn-primary">Registrar</button>
+        <button type="submit" class="buttonSubmit">Registrar</button>
       </form>
     </div>
   </template>
   
-<style>
+<style scoped>
+    .buttonSubmit{
+        background-color: #D9043D;
+        border: 0;
+        border-radius: 5px;
+        margin: auto;
+        width: 100%;
+        height: 40px;
+    }
     .errorMessage{
         color: red;
     }
     .register-container {
+        box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         width: 300px;
         margin: 100px auto 0;
         padding: 20px;

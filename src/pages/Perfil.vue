@@ -185,7 +185,7 @@ export default {
   </div>
 </template>
 
-<style>
+<style scoped>
   .buttonContainer{
     display: flex;
     flex-wrap: wrap;
@@ -195,6 +195,7 @@ export default {
       color: red;
   }
   .register-container {
+      box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
       width: 400px;
       margin: 100px auto 0;
       padding: 20px;

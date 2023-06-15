@@ -21,7 +21,7 @@
     </div>
   </template>
   
-  <style>
+  <style scoped>
   .twitter-feed-container {
     padding-bottom: 70px;
     width: 100%; 

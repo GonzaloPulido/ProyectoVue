@@ -89,7 +89,7 @@
           <span v-if="!checkMessage(this.form.message)" class="errorMessage">Credenciales incorrectas</span>
         </div>
         <div class="form-group">
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="buttonSubmit">Enviar</button>
         </div>
       </form>
     </div>
@@ -97,79 +97,88 @@
   
   
   
-<style>
-    .errorMessage {
-        color: red;
-    }
-    
-    .register-container {
-        width: 300px;
-        margin: 100px auto 0;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        background-color: #f9f9f9;
-    }
-    
-    h2 {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .register-form .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .register-form label {
-        display: block;
-        font-weight: bold;
-    }
-    
-    .register-form input[type="text"],
-    .register-form input[type="email"],
-    .register-form input[type="password"],
-    .register-form input[type="number"],
-    .register-form textarea {
-        width: 100%;
-        padding: 5px;
-        border-radius: 3px;
-        border: 1px solid #ccc;
-    }
-    
-    .btn {
-        display: inline-block;
-        padding: 5px 10px;
-        background-color: #337ab7;
-        color: #fff;
-        border: none;
-        border-radius: 3px;
-        cursor: pointer;
-    }
-    
-    .btn-primary {
-        background-color: #337ab7;
-    }
-    
-    .btn-primary:hover {
-        background-color: #286090;
-    }
-    .popup {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+<style scoped>
+.buttonSubmit{
+  background-color: #D9043D;
+  border: 0;
+  border-radius: 5px;
+  margin: auto;
+  width: 100%;
+  height: 40px;
+}
+.errorMessage {
+  color: red;
+}
 
-    .popup-content {
-        background-color: #fff;
-        padding: 1rem;
-        border-radius: 4px;
-        text-align: center;
-    }
+.register-container {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  width: 350px;
+  margin: 100px auto 0;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.register-form .form-group {
+  margin-bottom: 15px;
+}
+
+.register-form label {
+  display: block;
+  font-weight: bold;
+}
+
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"],
+.register-form input[type="number"],
+.register-form textarea {
+  width: 100%;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #337ab7;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #337ab7;
+}
+
+.btn-primary:hover {
+  background-color: #286090;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+}
 </style>
   
