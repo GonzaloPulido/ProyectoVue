@@ -61,10 +61,10 @@
         <img :src="item.image" alt="Imagen del piloto" class="teamimage" />
         <div class="infoteam">
             <p class="teamname">{{ item.name }}</p>
-            <router-link :to="`/piloto/${item.piloto1Id}`">
+            <router-link :to="`/piloto/${item.piloto1Id}?category=${this.category}`">
               <p class="ridername">{{ item.piloto1 }}</p>
             </router-link>
-            <router-link :to="`/piloto/${item.piloto2Id}`"> 
+            <router-link :to="`/piloto/${item.piloto2Id}?category=${this.category}`"> 
               <p class="ridername">{{ item.piloto2 }}</p>
             </router-link>
         </div>

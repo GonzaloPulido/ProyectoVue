@@ -63,7 +63,7 @@
         <p class="ridername">{{ item.name }}</p>
         <p>{{ item.country }}</p>
         <p>{{ item.height }}</p>
-        <router-link :to="`/piloto/${item._id}`" class="buttoninfo">
+        <router-link :to="`/piloto/${item._id}?category=${this.category}`" class="buttoninfo" :category="this.category">
           Informacion
         </router-link>
       </div>
