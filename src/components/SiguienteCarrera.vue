@@ -64,6 +64,7 @@ export default {
 <style scoped>
 .titleCircuito{
     font-size: 2.5rem;
+    text-align: center;
 }
 .circuitname{
     font-size: 1.5rem;

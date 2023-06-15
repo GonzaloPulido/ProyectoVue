@@ -103,6 +103,9 @@ export default {
 </template>
   
   <style scoped>
+  .errorMessage{
+    color: red;
+  }
   .buttonSubmit{
     background-color: #D9043D;
     border: 0;
@@ -110,6 +113,7 @@ export default {
     margin: auto;
     width: 100%;
     height: 40px;
+    color: white;
   }
   .login-container {
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);

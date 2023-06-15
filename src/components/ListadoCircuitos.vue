@@ -109,8 +109,8 @@ export default {
     <div class="card-content">
       <img :src="item.backImage" alt="Imagen del circuito" class="backImage" />
       <div class="infocircuit">
+        <p class="circuitName">{{ item.circuit }}</p>
         <p>{{ item.country }}</p>
-        <p>{{ item.circuit }}</p>
         <p>{{ item.start }}  a  {{ item.finish }}</p>
         <div class="toggle-button" @click="toggleInfo(index)">
           <i :class="['fa-solid', showInfo === index ? 'fa-angle-up' : 'fa-angle-down']"></i>
@@ -135,7 +135,9 @@ export default {
 </template>
 
 <style scoped>
-
+.circuitName{
+  font-weight: bold;
+}
 .cardcircuit {
   background-color: #2b2e31;
   border-radius: 10px;

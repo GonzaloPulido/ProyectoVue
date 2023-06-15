@@ -32,11 +32,6 @@ export default {
         Suspendisse potenti. Praesent in nibh diam. Nullam sagittis vel dui ut gravida. Phasellus mi urna, 
         convallis vitae leo ac, ornare porttitor tortor. Suspendisse sed ante vitae quam rutrum posuere. Donec 
         pellentesque pretium lacus. Aenean elementum sollicitudin finibus. Etiam ut pharetra erat.
-
-        Vivamus auctor turpis sit amet dapibus ornare. Integer id aliquet erat, id tincidunt tortor. Donec ultrices 
-        commodo hendrerit. Curabitur enim nisl, tristique commodo tellus sit amet, gravida sollicitudin felis. Aenean 
-        finibus elementum nibh, et euismod neque posuere vitae. Pellentesque habitant morbi tristique senectus et netus 
-        et malesuada fames ac turpis egestas. Integer nec tempor augue, eu placerat purus.
       </p>
     </div>
     </div>

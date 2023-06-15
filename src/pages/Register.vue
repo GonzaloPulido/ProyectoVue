@@ -16,6 +16,7 @@ export default {
         users: [],
         goodWarning: false,
         badWarning: false,
+        duplicatedWarning: false,
         
     };
   },
@@ -65,9 +66,9 @@ export default {
             );
 
             if(duplicateUser || duplicateEmail) {
-                this.badWarning = true
+                this.duplicatedWarning = true
                 setTimeout(() => {
-                    this.badWarning = false;
+                    this.duplicatedWarning = false;
                 },2000)
             }else if(this.checkUsername(this.formData.userName)&& this.checkFirstname(this.formData.firstname) && 
                     this.checkSurname(this.formData.surname) && this.checkAge(this.formData.age) && this.checkEmail(this.formData.email) 
@@ -89,6 +90,11 @@ export default {
                 }else{
                     console.log('BAD REQUEST')
                 }   
+            }else{
+                this.badWarning = true
+                setTimeout(() => {
+                    this.badWarning = false;
+                },2000)
             }
         }catch (error){
             console.log(error)
@@ -112,6 +118,13 @@ export default {
     <div class="popup" v-if="badWarning">
         <div class="popup-content">
             <p>Credenciales incorrectas</p>
+        </div>
+    </div>
+
+    <!-- Pop Up Duplicated -->
+    <div class="popup" v-if="duplicatedWarning">
+        <div class="popup-content">
+            <p>Nombre de usuario o Email existente</p>
         </div>
     </div>
 
@@ -156,6 +169,7 @@ export default {
   
 <style scoped>
     .buttonSubmit{
+        color: white;
         background-color: #D9043D;
         border: 0;
         border-radius: 5px;
@@ -169,7 +183,7 @@ export default {
     .register-container {
         box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
         width: 300px;
-        margin: 100px auto 0;
+        margin: 60px auto 0;
         padding: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;

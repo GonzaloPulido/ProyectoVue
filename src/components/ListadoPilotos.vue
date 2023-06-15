@@ -103,6 +103,7 @@ a:link, a:visited, a:active {
   margin-top: 38%;
   text-align: right;
   margin-right: 20px;
+  color: white;
 }
 
 .riderimage {
