@@ -60,7 +60,7 @@
     >
       <img :src="item.image" alt="Imagen del piloto" class="riderimage" />
       <div class="inforider">
-        <p>{{ item.name }}</p>
+        <p class="ridername">{{ item.name }}</p>
         <p>{{ item.country }}</p>
         <p>{{ item.height }}</p>
         <router-link :to="`/piloto/${item._id}`" class="buttoninfo">
@@ -94,25 +94,20 @@ a:link, a:visited, a:active {
   background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%);
   display: flex;
   justify-content: space-between;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
   
 }
-
-/* .imagecontainer {
-  width: 90%;
-  height: 0;
-  position: relative;
-} */
 .inforider{
   width: 50%;
-  margin-top: 40%;
+  margin-top: 38%;
   text-align: right;
+  margin-right: 20px;
 }
 
 .riderimage {
   width: 50%;
   margin-top: auto;
-  /* object-fit: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%); */
 }
 
 .buttoninfo{
@@ -120,6 +115,10 @@ a:link, a:visited, a:active {
   padding: 4px;
   border-radius: 5px;
   color: white;
+}
+.ridername{
+  font-weight: bold;
+  text-decoration: underline white;
 }
 
 </style>

@@ -16,7 +16,7 @@ export default {
 
 <style>
   .circuitspage {
-    background-color: #707070;
+    background-color: #a4a4a4;
     display: flex;
     flex-direction: column;
     align-items: center;

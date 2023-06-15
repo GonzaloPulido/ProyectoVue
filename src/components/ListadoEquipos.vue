@@ -53,29 +53,69 @@
 </script>
 
 <template>
+  <div class="teamslist">
     <div
     v-for="(item, index) in teams"
     class="cardteam"
     >
         <img :src="item.image" alt="Imagen del piloto" class="teamimage" />
         <div class="infoteam">
-            <p>{{ item.name }}</p>
+            <p class="teamname">{{ item.name }}</p>
             <router-link :to="`/piloto/${item.piloto1Id}`">
-              <p>{{ item.piloto1 }}</p>
+              <p class="ridername">{{ item.piloto1 }}</p>
             </router-link>
-
-            
             <router-link :to="`/piloto/${item.piloto2Id}`"> 
-              <p>{{ item.piloto2 }}</p>
+              <p class="ridername">{{ item.piloto2 }}</p>
             </router-link>
         </div>
-        
     </div>
-  </template>
+  </div>
+</template>
 
 
 <style scoped>
+a:link, a:visited, a:active {
+  text-decoration: none;
+}
+.teamslist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cardteam{
+  width: 31.3%; 
+  min-width: 400px;
+  margin: auto;
+  margin-bottom: 30px;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 50%, rgba(255,255,255,0) 100%);
+  display: flex;
+  justify-content: space-between;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 .teamimage{
-    width: 20%;
+    width: 60%;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.infoteam{
+  width: 50%;
+  text-align: right;
+  margin-right: 10px;
+  margin-top: 20%;
+  color: white;
+}
+.ridername{
+  color: white;
+  text-decoration: underline white;
+}
+.teamname{
+  font-weight: bold;
 }
 </style>
