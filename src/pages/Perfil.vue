@@ -74,16 +74,7 @@ export default {
         },
       async updateUser(){
         try {
-            const duplicateEmail = this.users.some(
-                (user) => user.email === this.logedUser.email
-            );
-
-            if(duplicateEmail) {
-                this.badWarning = true
-                setTimeout(() => {
-                    this.badWarning = false;
-                },2000)
-            }else if(this.checkUsername(this.logedUser.userName)&& this.checkFirstname(this.logedUser.firstname) && 
+            if(this.checkUsername(this.logedUser.userName)&& this.checkFirstname(this.logedUser.firstname) && 
                     this.checkSurname(this.logedUser.surname) && this.checkAge(this.logedUser.age) && this.checkEmail(this.logedUser.email) 
                     && this.checkPassword(this.logedUser.password)) {
                 const data = await fetch(`https://apimotogp2023-production.up.railway.app/api/users/${this.userId}`,{
