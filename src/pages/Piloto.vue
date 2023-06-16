@@ -66,6 +66,7 @@ export default {
   }
   .inforider{
     margin-top: 50%;
+    font-size: 1.2rem;
   }
   @media (max-width: 1100px) {
   .containerrider {
