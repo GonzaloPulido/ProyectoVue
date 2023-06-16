@@ -121,13 +121,6 @@ export default {
       </div>
   </div>
 
-  <!-- Pop Up Bad -->
-  <div class="popup" v-if="badWarning">
-      <div class="popup-content">
-          <p>Email ya registrado</p>
-      </div>
-  </div>
-
   <!-- Pop Up Delete -->
   <div class="popup" v-if="delWarning">
       <div class="popup-content">
