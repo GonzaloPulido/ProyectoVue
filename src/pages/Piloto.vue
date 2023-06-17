@@ -11,13 +11,9 @@ export default {
     },
     methods: {
         async getDataFromApi() {
-            console.log(this.riderId);
-            console.log(this.category);
-            console.log(`https://apimotogp2023-production.up.railway.app/api/riders${this.category}/${this.riderId}`);
         try {
           const data = await fetchDataFromApi(`https://apimotogp2023-production.up.railway.app/api/riders${this.category}/${this.riderId}`);
           this.riderObject = data
-          console.log(this.riderObject);
         } catch (error) {
           console.error('Error al obtener los datos de la API:', error);
         }

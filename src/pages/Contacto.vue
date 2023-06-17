@@ -30,7 +30,8 @@
             return regex.test(subject)
         },
         checkMessage(message){
-            const regex = /^(?!.*(?:[.,]{2}|[.,]\s+[.,]))[A-Za-z0-9\s.,]{1,160}$/;
+            const regex = /^(?!.*(?:[.,]{2}|[.,]\s+[.,]))[A-Za-z0-9\s.,]*(?<!\s)\s?[A-Za-z0-9\s.,]{0,159}$/;
+;
             return regex.test(message)
         },
 
