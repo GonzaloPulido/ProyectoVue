@@ -21,17 +21,17 @@ export default {
       <h1 class="indextitle">MotoGP Temporada 2023</h1>
       <img src="../assets/grid2023.webp" class="grid2023"/>
       <p class="indexparagraph">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque pretium orci sem, 
-        vitae posuere nibh pellentesque a. Integer ultricies mollis neque, a commodo mauris 
-        consequat lobortis. Nam nec malesuada ante. Aliquam erat volutpat. Quisque fringilla felis 
-        mauris, id consectetur felis pulvinar vel. Sed arcu odio, dictum eu molestie et, pharetra et ante. 
-        Nunc vel diam sapien.
-
-        Mauris ex eros, tempus at euismod et, pellentesque nec lacus. Nam tincidunt vestibulum enim, ac 
-        efficitur dui interdum non. Quisque sed congue nulla. Nullam in eros in felis tincidunt imperdiet. 
-        Suspendisse potenti. Praesent in nibh diam. Nullam sagittis vel dui ut gravida. Phasellus mi urna, 
-        convallis vitae leo ac, ornare porttitor tortor. Suspendisse sed ante vitae quam rutrum posuere. Donec 
-        pellentesque pretium lacus. Aenean elementum sollicitudin finibus. Etiam ut pharetra erat.
+        La temporada 2023 de MotoGP se perfila como una de las más emocionantes y competitivas en 
+        la historia del campeonato. Los mejores pilotos del mundo se enfrentarán en una serie de 
+        carreras llenas de acción y adrenalina, desafiando los límites de la velocidad y la destreza. 
+        Los aficionados pueden esperar batallas épicas en cada circuito, donde los contendientes lucharán 
+        sin tregua por el codiciado título mundial. Las motos rugirán en las rectas, las curvas serán 
+        desafiantes y los adelantamientos estarán al límite. Cada Gran Premio será un espectáculo 
+        inolvidable, con estrategias tácticas, habilidades excepcionales y el rugir ensordecedor de 
+        los motores. Los fanáticos presenciarán rivalidades intensas, sorpresas emocionantes y momentos 
+        de pura emoción que mantendrán a todos al borde de sus asientos. La temporada 2023 de MotoGP promete 
+        regalarnos una competencia sin igual, y los amantes de las carreras de motos no pueden perderse este 
+        emocionante capítulo en la historia del deporte de dos ruedas.
       </p>
     </div>
     </div>

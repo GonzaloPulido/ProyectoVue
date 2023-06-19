@@ -1,4 +1,5 @@
 <script>
+  // Logica llamada a twitter oficial de MotoGP
   export default {
     mounted() {
       const script = document.createElement('script');

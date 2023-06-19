@@ -2,6 +2,7 @@
   import { fetchDataFromApi } from '../helpers/apiHelper.js';
 
   export default {
+    // Categoria
     props: {
       category: {
         type: String,

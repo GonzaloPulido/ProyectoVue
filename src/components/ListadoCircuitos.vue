@@ -26,6 +26,7 @@ export default {
     this.getDataFromUserId();
   },
   methods: {
+    // Peticion a circitos
     async getDataFromApi() {
       try {
         const data = await fetchDataFromApi(this.url);
@@ -34,6 +35,7 @@ export default {
         console.error('Error al obtener los datos de la API:', error);
       }
     },
+    // Peticion al usuario
     async getDataFromUserId() {
       try {
         const response = await fetchDataFromApi(`https://apimotogp2023-production.up.railway.app/api/users/${this.userId}`);
@@ -44,7 +46,7 @@ export default {
     },
     searchCircuits() {
       if (this.searchTerm.trim() === '') {
-        this.searchResults = []; // Vaciar los resultados si el término de búsqueda está vacío
+        this.searchResults = []; 
       } else {
         this.searchResults = this.circuits.filter((item) =>
           item.circuit.toLowerCase().includes(this.searchTerm.toLowerCase())
@@ -54,6 +56,10 @@ export default {
     toggleInfo(index) {
       this.showInfo = this.showInfo === index ? null : index;
     },
+    applyMonthFilter() {
+      this.searchTerm = '';
+    },
+    // Funciones relacionadas con los favoritos
     changeFlag(id) {
       if (this.$store.state.isLoggedIn) {
         if (this.userData.favorites) {
@@ -100,26 +106,22 @@ export default {
         return false;
       }
     },
-    applyMonthFilter() {
-      this.searchTerm = '';
-    },
   },
   computed: {
     filteredCircuits() {
       let filteredData = this.circuits;
           
-      // Filtrar por mes si se seleccionó un mes en el filtro
+      // Filtro mes
       if (this.selectedMonth) {
         filteredData = filteredData.filter((item) => {
           const startDate = new Date(item.start);
           const startMonth = startDate.getMonth() + 1;
 
-          // Excluir enero, febrero y diciembre
+          // Quitar enero, febrero y diciembre
           return startMonth >= 3 && startMonth <= 11 && startMonth === this.selectedMonth+2;
         });
       }
-
-      // Filtrar por término de búsqueda
+      
       if (this.searchTerm.trim() !== '') {
         const searchTermLower = this.searchTerm.toLowerCase();
         filteredData = filteredData.filter((item) =>

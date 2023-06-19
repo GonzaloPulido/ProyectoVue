@@ -45,7 +45,7 @@ export default {
             const finalUser = this.users.find(
               (user) => user.email === this.formData.email
             )
-            /* this.$userId.state.userId = finalUser._id; */
+            
             localStorage.setItem("logedUser",finalUser._id);
             this.$store.state.userId = finalUser._id;
             

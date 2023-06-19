@@ -16,7 +16,7 @@ export default {
             try {
                 const data = await fetchDataFromApi(`https://apimotogp2023-production.up.railway.app/api/users/${this.userId}`);
                 this.userData = data;
-                this.listaFavoritos(); // Llamar a listaFavoritos después de obtener los datos
+                this.listaFavoritos();
             } catch (error) {
                 console.error('Error al obtener los datos de la API:', error);
             }
@@ -45,7 +45,7 @@ export default {
           return false;
         }
       },
-
+      
       async clickFav(id){
         if(this.$store.state.isLoggedIn){
           if(this.userData.favorites){

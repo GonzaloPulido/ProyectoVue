@@ -9,6 +9,7 @@ export default {
   },
   data() {
     return {
+      // Primera categoria por defecto
       selectedCategory: 'MotoGP',
     };
   },

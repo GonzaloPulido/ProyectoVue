@@ -10,32 +10,30 @@ export default {
     };
   },
   methods: {
+    // Peticion a todos los circuitos
     async getDataFromApi() {
       try {
         const data = await fetchDataFromApi(this.url);
         this.allCircuits = data;
-        this.searchNextRace(); // Llamamos a la función para encontrar el próximo gran premio
+        this.searchNextRace(); 
       } catch (error) {
         console.error('Error al obtener los datos de la API:', error);
       }
     },
+    // Logica siguiente carrera
     searchNextRace() {
       const currentDate = new Date();
 
       const upcomingCircuits = this.allCircuits.map((circuit) => ({
         ...circuit,
-        start: circuit.start.split('T')[0], // Eliminar la parte de la hora y la zona horaria
-        finish: circuit.finish.split('T')[0], // Eliminar la parte de la hora y la zona horaria
+        start: circuit.start.split('T')[0], 
+        finish: circuit.finish.split('T')[0], 
       }));
-
       const filteredCircuits = upcomingCircuits.filter(
         (circuit) =>
           new Date(circuit.start) > currentDate || new Date(circuit.finish) > currentDate
       );
-
       filteredCircuits.sort((a, b) => new Date(a.start) - new Date(b.start));
-
-      // Mantener el objeto circuit original en nextRace sin cambios
       this.nextRace = JSON.parse(JSON.stringify(filteredCircuits[0]));
     },
   },

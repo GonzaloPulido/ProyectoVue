@@ -30,11 +30,10 @@
             return regex.test(subject)
         },
         checkMessage(message){
-            const regex = /^(?!.*(?:[.,]{2}|[.,]\s+[.,]))[A-Za-z0-9\s.,]*(?<!\s)\s?[A-Za-z0-9\s.,]{0,159}$/;
-;
+            const regex = /^(?!.* {2,})[A-Za-z0-9\s.,]{10,160}$/;
             return regex.test(message)
         },
-
+        // Subida de formulario a localStorage
         submitForm() {
             if(this.checkFirstname(this.form.firstname) && this.checkSurname(this.form.surname)
             && this.checkEmail(this.form.email) && this.checkSubject(this.form.subject)

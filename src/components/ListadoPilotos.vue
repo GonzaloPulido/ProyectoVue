@@ -25,6 +25,7 @@
       },
     },
     methods: {
+      // Llamada a la api segun la categoria
       async getDataFromApi() {
         try {
           let url = '';
